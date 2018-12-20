@@ -17,19 +17,19 @@ import javax.persistence.Embeddable;
  */
 @Embeddable
 public class Address {
-	
+
 	@Column(name = "BUILDING")
 	private String building;
 
 	@Column(name = "STREET")
 	private String street;
-	
+
 	@Column(name = "CITY")
 	private String city;
-	
+
 	@Column(name = "STATE")
 	private String state;
-	
+
 	@Column(name = "PIN_CODE")
 	private String pincode;
 
@@ -73,5 +73,8 @@ public class Address {
 		this.pincode = pincode;
 	}
 
-
+	@Override
+	public String toString() {
+		return this.building + ", " + this.street + ", \n" + this.city + " " + this.state + " " + this.pincode;
+	}
 }

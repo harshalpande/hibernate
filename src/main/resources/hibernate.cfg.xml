@@ -29,7 +29,8 @@
 			table and schema present if not creates a new one -->
 		<property name="hbm2ddl.auto">create</property>
 
-		<!-- Name of Annotated Model Classes Here -->
-		<mapping class="connection.jpa.model.UserDetails" />
+		<!-- Name of Annotated Model Classes Here 
+		<mapping class="connection.jpa.model.UserDetails" />   -->
+		<mapping class="connection.jpa.model.UserDetailsNormalized" />
 	</session-factory>
 </hibernate-configuration>
