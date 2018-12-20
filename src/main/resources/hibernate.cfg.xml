@@ -21,11 +21,15 @@
 
 		<property name="current_session_context_class">thread</property>
 		<property name="cache.provider_class">org.hibernate.cache.NoCacheProvider</property>
+
+		<!-- Prints SQL Queries to Console TRUE/FALSE -->
 		<property name="show_sql">true</property>
-		<property name="hbm2ddl.auto">update</property>
+
+		<!-- Value create : creates everytime new Schema, update : updates to same 
+			table and schema present if not creates a new one -->
+		<property name="hbm2ddl.auto">create</property>
 
 		<!-- Name of Annotated Model Classes Here -->
-		<mapping
-			class="connection.jpa.model.UserDetails" />
+		<mapping class="connection.jpa.model.UserDetails" />
 	</session-factory>
 </hibernate-configuration>
