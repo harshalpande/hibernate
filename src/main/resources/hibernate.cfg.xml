@@ -27,13 +27,16 @@
 
 		<!-- Value create : creates everytime new Schema, update : updates to same 
 			table and schema present if not creates a new one -->
-		<property name="hbm2ddl.auto">update</property>
+		<property name="hbm2ddl.auto">create</property>
 
 		<!-- Name of Annotated Model Classes Here 
 		<mapping class="connection.jpa.model.UserDetailsOneOne" />
 		<mapping class="connection.jpa.model.VehicleDetails" />
-		<mapping class="connection.jpa.model.UserDetails" />   -->
+		<mapping class="connection.jpa.model.UserDetails" />   
 		<mapping class="connection.jpa.model.OneToManyToOneUserDetails"/>
-		<mapping class="connection.jpa.model.OneToManyToOneVehicleDetails"/>
+		<mapping class="connection.jpa.model.OneToManyToOneVehicleDetails"/>   -->
+		
+		<mapping class="connection.jpa.model.ManyToManyVehicleDetails"/>
+		<mapping class="connection.jpa.model.ManyToManyUserDetails"/>
 	</session-factory>
 </hibernate-configuration>

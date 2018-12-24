@@ -23,7 +23,17 @@ public class OneToManyToOneUserDetails {
 	@Column(name="USER_NAME")
 	private String userName;
 
-	@OneToMany
+	
+	/**
+	 * using basic OneToMany and ManyToOne creates a different table for mapping, 
+	 * however in some scenarios, this seperate mapping table is not required. 
+	 * for e.g. User can have many vehicles(OneToMany), but vehicle can have only one user (ManyToOne)
+	 * so we can eliminate seperate mapping table by creating a new COLUMN User_ID in Vehicle table. 
+	 * This can be done by using property 'mappedBy', where we have to specify in the source table class
+	 * where we have to do the mapping. here we have to do mapping in Vehicle Table by specifying User_ID 
+	 * column, hence the property will be mentioned in User Table like below.
+	 * */
+	@OneToMany(mappedBy="user")
 	private Collection<OneToManyToOneVehicleDetails> vehicle = new ArrayList<OneToManyToOneVehicleDetails>();;
 	
 	public Collection<OneToManyToOneVehicleDetails> getVehicle() {
