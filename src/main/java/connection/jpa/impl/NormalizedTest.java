@@ -52,7 +52,7 @@ public class NormalizedTest {
 		session.save(userDetails);
 		session.getTransaction().commit();
 		session.close();
-
+		
 	}
 
 }
