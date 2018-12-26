@@ -27,16 +27,30 @@
 
 		<!-- Value create : creates everytime new Schema, update : updates to same 
 			table and schema present if not creates a new one -->
-		<property name="hbm2ddl.auto">create</property>
+		<property name="hbm2ddl.auto">update</property>
 
 		<!-- Name of Annotated Model Classes Here 
 		<mapping class="connection.jpa.model.UserDetailsOneOne" />
 		<mapping class="connection.jpa.model.VehicleDetails" />
 		<mapping class="connection.jpa.model.UserDetails" />   
 		<mapping class="connection.jpa.model.OneToManyToOneUserDetails"/>
-		<mapping class="connection.jpa.model.OneToManyToOneVehicleDetails"/>   -->
-		
+		<mapping class="connection.jpa.model.OneToManyToOneVehicleDetails"/>   
 		<mapping class="connection.jpa.model.ManyToManyVehicleDetails"/>
 		<mapping class="connection.jpa.model.ManyToManyUserDetails"/>
+		<mapping class="connection.jpa.cascading.UserDetails"/>
+		<mapping class="connection.jpa.cascading.Vehicle"/>
+		<mapping class="connection.jpa.inheritance.strategy.single.Vehicle"/>
+		<mapping class="connection.jpa.inheritance.strategy.single.FourWheeler"/>
+		<mapping class="connection.jpa.inheritance.strategy.single.TwoWheeler"/> 
+		<mapping class="connection.jpa.inheritance.strategy.perClass.Vehicle"/> 
+		<mapping class="connection.jpa.inheritance.strategy.perClass.FourWheeler"/>
+		<mapping class="connection.jpa.inheritance.strategy.perClass.TwoWheeler"/>  
+		<mapping class="connection.jpa.inheritance.strategy.joined.Vehicle"/> 
+		<mapping class="connection.jpa.inheritance.strategy.joined.FourWheeler"/>
+		<mapping class="connection.jpa.inheritance.strategy.joined.TwoWheeler"/>	-->
+		
+		<mapping class="connection.jpa.crud.UserDetails"/>
+		
+		
 	</session-factory>
 </hibernate-configuration>
