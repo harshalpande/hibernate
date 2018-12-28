@@ -49,7 +49,7 @@
 		<mapping class="connection.jpa.inheritance.strategy.joined.FourWheeler"/>
 		<mapping class="connection.jpa.inheritance.strategy.joined.TwoWheeler"/>	-->
 		
-		<mapping class="connection.jpa.crud.UserDetails"/>
+		<mapping class="connection.hibernate.criteria.UserDetails"/>
 		
 		
 	</session-factory>
