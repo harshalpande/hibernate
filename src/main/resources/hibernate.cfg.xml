@@ -20,7 +20,22 @@
 		<property name="hibernate.dialect">org.hibernate.dialect.PostgreSQLDialect</property>
 
 		<property name="current_session_context_class">thread</property>
-		<property name="cache.provider_class">org.hibernate.cache.NoCacheProvider</property>
+
+		<!-- Configure Hibernate to use NO Second Level Cache provider <property 
+			name="cache.provider_class">org.hibernate.cache.NoCacheProvider</property> -->
+
+		<!-- <property name="hibernate.cache.region.factory_class">org.hibernate.cache.ehcache.EhCacheRegionFactory</property> -->
+		<property name="hibernate.cache.region.factory_class">org.ehcache.jsr107.EhcacheCachingProvider</property>
+
+		<!-- For singleton factory -->
+		<!-- <property name="hibernate.cache.region.factory_class">org.hibernate.cache.ehcache.SingletonEhCacheRegionFactory</property> -->
+
+		<!-- enable second level cache and query cache -->
+		<property name="hibernate.cache.use_second_level_cache">true</property>
+		<property name="hibernate.cache.use_query_cache">true</property>
+		<!-- <property name="org.hibernate.cache.ehcache.configurationResourceName">/ehcache.xml</property> -->
+
+
 
 		<!-- Prints SQL Queries to Console TRUE/FALSE -->
 		<property name="show_sql">true</property>
@@ -29,28 +44,22 @@
 			table and schema present if not creates a new one -->
 		<property name="hbm2ddl.auto">update</property>
 
-		<!-- Name of Annotated Model Classes Here 
-		<mapping class="connection.jpa.model.UserDetailsOneOne" />
-		<mapping class="connection.jpa.model.VehicleDetails" />
-		<mapping class="connection.jpa.model.UserDetails" />   
-		<mapping class="connection.jpa.model.OneToManyToOneUserDetails"/>
-		<mapping class="connection.jpa.model.OneToManyToOneVehicleDetails"/>   
-		<mapping class="connection.jpa.model.ManyToManyVehicleDetails"/>
-		<mapping class="connection.jpa.model.ManyToManyUserDetails"/>
-		<mapping class="connection.jpa.cascading.UserDetails"/>
-		<mapping class="connection.jpa.cascading.Vehicle"/>
-		<mapping class="connection.jpa.inheritance.strategy.single.Vehicle"/>
-		<mapping class="connection.jpa.inheritance.strategy.single.FourWheeler"/>
-		<mapping class="connection.jpa.inheritance.strategy.single.TwoWheeler"/> 
-		<mapping class="connection.jpa.inheritance.strategy.perClass.Vehicle"/> 
-		<mapping class="connection.jpa.inheritance.strategy.perClass.FourWheeler"/>
-		<mapping class="connection.jpa.inheritance.strategy.perClass.TwoWheeler"/>  
-		<mapping class="connection.jpa.inheritance.strategy.joined.Vehicle"/> 
-		<mapping class="connection.jpa.inheritance.strategy.joined.FourWheeler"/>
-		<mapping class="connection.jpa.inheritance.strategy.joined.TwoWheeler"/>	-->
-		
-		<mapping class="connection.hibernate.criteria.UserDetails"/>
-		
-		
+		<!-- Name of Annotated Model Classes Here <mapping class="connection.jpa.model.UserDetailsOneOne" 
+			/> <mapping class="connection.jpa.model.VehicleDetails" /> <mapping class="connection.jpa.model.UserDetails" 
+			/> <mapping class="connection.jpa.model.OneToManyToOneUserDetails"/> <mapping 
+			class="connection.jpa.model.OneToManyToOneVehicleDetails"/> <mapping class="connection.jpa.model.ManyToManyVehicleDetails"/> 
+			<mapping class="connection.jpa.model.ManyToManyUserDetails"/> <mapping class="connection.jpa.cascading.UserDetails"/> 
+			<mapping class="connection.jpa.cascading.Vehicle"/> <mapping class="connection.jpa.inheritance.strategy.single.Vehicle"/> 
+			<mapping class="connection.jpa.inheritance.strategy.single.FourWheeler"/> 
+			<mapping class="connection.jpa.inheritance.strategy.single.TwoWheeler"/> 
+			<mapping class="connection.jpa.inheritance.strategy.perClass.Vehicle"/> <mapping 
+			class="connection.jpa.inheritance.strategy.perClass.FourWheeler"/> <mapping 
+			class="connection.jpa.inheritance.strategy.perClass.TwoWheeler"/> <mapping 
+			class="connection.jpa.inheritance.strategy.joined.Vehicle"/> <mapping class="connection.jpa.inheritance.strategy.joined.FourWheeler"/> 
+			<mapping class="connection.jpa.inheritance.strategy.joined.TwoWheeler"/> -->
+
+		<mapping class="connection.hibernate.cache.UserDetails" />
+
+
 	</session-factory>
 </hibernate-configuration>
