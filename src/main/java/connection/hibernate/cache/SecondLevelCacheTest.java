@@ -38,13 +38,15 @@ public class SecondLevelCacheTest {
 		UserDetails user = (UserDetails) session.get(UserDetails.class, 1);
 		
 		session.getTransaction().commit();
+		session.clear();
 		session.close();
+		
 
 		// Second Session Object
 		Session session2 = factory.openSession();
 		session2.beginTransaction();
 
-		UserDetails anotherUser = (UserDetails) session.get(UserDetails.class, 1);
+		UserDetails anotherUser = (UserDetails) session2.get(UserDetails.class, 1);
 
 		session2.getTransaction().commit();
 		session2.close();

@@ -8,18 +8,18 @@
 
 	<dependencies>
 		<!-- https://mvnrepository.com/artifact/org.hibernate/hibernate-core -->
-		<!-- <dependency>
+		<dependency>
 			<groupId>org.hibernate</groupId>
 			<artifactId>hibernate-core</artifactId>
 			<version>4.1.2</version>
-		</dependency> -->
+		</dependency>
 		
 		<!-- https://mvnrepository.com/artifact/org.hibernate/hibernate-core -->
-		<dependency>
+		<!-- <dependency>
 		    <groupId>org.hibernate</groupId>
 		    <artifactId>hibernate-core</artifactId>
 		    <version>3.6.4.Final</version>
-		</dependency>
+		</dependency> -->
 		
 
 		<!-- https://mvnrepository.com/artifact/org.postgresql/postgresql -->
@@ -31,9 +31,9 @@
 
 		<!-- https://mvnrepository.com/artifact/org.ehcache/ehcache -->
 		<dependency>
-		    <groupId>org.ehcache</groupId>
-		    <artifactId>ehcache</artifactId>
-		    <version>3.6.3</version>
+			<groupId>org.hibernate</groupId>
+			<artifactId>hibernate-ehcache</artifactId>
+			<version>4.0.0.Final</version>
 		</dependency>
 		
 		<dependency>
